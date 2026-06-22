@@ -13,11 +13,7 @@ dependencies = [
     "pydantic[email]>=2.12.5",
     "python-jose[cryptography]>=3.5.0",
     "python-multipart>=0.0.22",
+    "psycopg2-binary>=2.9.11",
     "sqlalchemy[asyncio]>=2.0.48",
     "uvicorn[standard]>=0.41.0",
-]
-
-[dependency-groups]
-dev = [
-    "psycopg2-binary>=2.9.11",
 ]

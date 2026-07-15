@@ -8,5 +8,6 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_DAYS: int = 7
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
+    RESET_TOKEN_EXPIRE_HOURS: int = 1
 
 settings = Settings()

@@ -11,6 +11,7 @@ from alembic import context
 # ── App imports ─────────────────────────────────────────────────────────────
 from app.core.config import settings
 from app.db.base import Base
+from app.models.password_reset import PasswordResetToken  # noqa: F401
 from app.models.user import User  # noqa: F401
 
 # ── Alembic config ───────────────────────────────────────────────────────────

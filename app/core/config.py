@@ -9,5 +9,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_DAYS: int = 7
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
     RESET_TOKEN_EXPIRE_HOURS: int = 1
+    EMAIL_USER: str = ""
+    EMAIL_PASSWORD: str = ""
 
 settings = Settings()

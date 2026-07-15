@@ -7,6 +7,7 @@ from jose import JWTError
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
+from app.core.email import send_password_reset_email
 from app.core.security import (
     create_access_token,
     create_refresh_token,
@@ -77,8 +78,10 @@ class AuthService:
 
         await self.reset_token_repo.create(user.id, hashed_token, expires_at)
 
+        await send_password_reset_email(data.email, raw_token)
+
         return ForgotPasswordResponse(
-            message=f"If that email is registered, you will receive a password reset link"
+            message="If that email is registered, you will receive a password reset link"
         )
 
     async def reset_password(self, data: ResetPasswordRequest) -> ResetPasswordResponse:
